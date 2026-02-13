@@ -1,6 +1,7 @@
 // Elements
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
+
 const noBtn = document.querySelector(".no-btn");
 const yesBtn = document.querySelector(".yes-btn");
 
@@ -13,7 +14,10 @@ const videoSection = document.getElementById("video-section");
 const video = document.getElementById("memory-video");
 const meetLink = document.getElementById("meet-link");
 
-// Open letter
+
+// ------------------------------
+// Open envelope → show letter
+// ------------------------------
 envelope.addEventListener("click", () => {
   envelope.style.display = "none";
   letter.style.display = "flex";
@@ -23,7 +27,10 @@ envelope.addEventListener("click", () => {
   }, 50);
 });
 
-// Move NO button
+
+// ------------------------------
+// Move NO button randomly
+// ------------------------------
 noBtn.addEventListener("mouseover", () => {
   const distance = 200;
   const angle = Math.random() * Math.PI * 2;
@@ -34,7 +41,10 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
-// YES clicked
+
+// ------------------------------
+// YES clicked → show video
+// ------------------------------
 yesBtn.addEventListener("click", () => {
   title.textContent = "You just made my day ❤️";
   catImg.src = "cat_dance.gif";
@@ -43,10 +53,20 @@ yesBtn.addEventListener("click", () => {
   finalText.style.display = "block";
   videoSection.style.display = "block";
 
-  video.play();
+  // Reset video in case of replay
+  video.currentTime = 0;
+
+  // Play video
+  video.play().catch(() => {
+    console.log("Autoplay blocked — user must press play.");
+  });
 });
 
-// Show Meet link after video
+
+// ------------------------------
+// After video ends → show Meet
+// ------------------------------
 video.addEventListener("ended", () => {
   meetLink.style.display = "inline-block";
 });
+

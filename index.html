@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Fonts -->
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -28,13 +28,21 @@
   <div id="letter-container">
     <div class="letter-window">
 
+      <!-- Title -->
       <h1 id="letter-title">Will you be my Valentine?</h1>
 
+      <!-- Cat (initial state) -->
       <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+      <!-- Video (replaces cat after YES) -->
+      <video id="memory-video" class="cat-video" controls>
+        <source src="gracyfinal.MP4" type="video/mp4">
+      </video>
 
       <!-- Buttons -->
       <div class="buttons" id="letter-buttons">
         <img src="yes.png" class="btn yes-btn" alt="Yes" />
+
         <div class="no-wrapper">
           <img src="no.png" class="btn no-btn" alt="No" />
         </div>
@@ -43,30 +51,19 @@
       <!-- Final Text -->
       <p id="final-text" class="final-text" style="display:none">
         A little something for you 🫶🏻 <br />
-        Watch till the end…
+        Watch till the end… <br /><br />
       </p>
 
-      <!-- Video Section -->
-      <div id="video-section" style="display:none">
-
-        <video id="memory-video" class="memory-video" controls>
-          <!-- IMPORTANT: match filename exactly -->
-          <source src="gracyfinal.MP4" type="video/mp4" />
-        </video>
-
-        <br />
-
-        <a
-          id="meet-link"
-          href="https://meet.google.com/aci-nori-fui"
-          target="_blank"
-          class="meet-link"
-          style="display:none"
-        >
-          Join our Meet - 7pm Feb 14 ❤️
-        </a>
-
-      </div>
+      <!-- Meet Link -->
+      <a
+        id="meet-link"
+        href="https://meet.google.com/aci-nori-fui"
+        target="_blank"
+        class="meet-link"
+        style="display:none"
+      >
+        Join our Meet — 7 PM 💻❤️
+      </a>
 
     </div>
   </div>

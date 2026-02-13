@@ -47,7 +47,6 @@ noBtn.addEventListener("mouseover", () => {
 // ------------------------------
 yesBtn.addEventListener("click", () => {
   title.textContent = "You just made my day ❤️";
-  catImg.src = "cat_dance.gif";
 
   buttons.style.display = "none";
   finalText.style.display = "block";

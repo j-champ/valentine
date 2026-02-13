@@ -10,7 +10,6 @@ const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
-const videoSection = document.getElementById("video-section");
 const video = document.getElementById("memory-video");
 const meetLink = document.getElementById("meet-link");
 
@@ -43,16 +42,24 @@ noBtn.addEventListener("mouseover", () => {
 
 
 // ------------------------------
-// YES clicked → show video
+// YES clicked → replace cat with video
 // ------------------------------
 yesBtn.addEventListener("click", () => {
+
+  // Change title
   title.textContent = "You just made my day ❤️";
 
+  // Hide buttons
   buttons.style.display = "none";
-  finalText.style.display = "block";
-  videoSection.style.display = "block";
 
-  // Reset video in case of replay
+  // Show final text
+  finalText.style.display = "block";
+
+  // Hide heart cat GIF
+  catImg.style.display = "none";
+
+  // Show video in same spot
+  video.style.display = "block";
   video.currentTime = 0;
 
   // Play video
